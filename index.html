@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Project</title>
+<title>New Marina City</title>
 
 <style>
 
@@ -18,130 +17,97 @@
 }
 
 body{
-
-    height:100vh;
+    min-height:100vh;
     background:#050816;
-    color:white;
+    color:#fff;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
-    overflow:hidden;
+    padding:20px;
+
+    overflow-x:hidden;
+    position:relative;
 }
 
-
-/* خلفية */
+/* الخلفية */
 
 body::before{
-
     content:"";
-
     position:absolute;
-
     width:500px;
     height:500px;
-
     background:#2563eb;
-
-    filter:blur(150px);
-
-    top:-150px;
-    right:-150px;
-
+    filter:blur(160px);
+    top:-180px;
+    right:-180px;
+    z-index:-1;
 }
-
 
 body::after{
-
     content:"";
-
     position:absolute;
-
     width:450px;
     height:450px;
-
     background:#06b6d4;
-
-    filter:blur(150px);
-
-    bottom:-150px;
-    left:-150px;
-
+    filter:blur(160px);
+    bottom:-180px;
+    left:-180px;
+    z-index:-1;
 }
 
-
-
-/* الكارت الرئيسي */
+/* الكارت */
 
 .container{
 
-    width:85%;
+    width:100%;
     max-width:1000px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
 
     padding:50px;
 
     background:rgba(255,255,255,.08);
-
     border:1px solid rgba(255,255,255,.15);
-
     backdrop-filter:blur(20px);
 
     border-radius:35px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
     animation:show 1s ease;
-
 }
-
-
 
 .text{
-
-    max-width:500px;
-
+    flex:1;
 }
-
 
 h1{
-
-    font-size:60px;
-
+    font-size:58px;
+    line-height:1.1;
     margin-bottom:20px;
-
 }
-
 
 h1 span{
-
     color:#38bdf8;
-
 }
-
-
 
 p{
-
-    color:#b7c0d1;
-
     font-size:18px;
-
+    color:#c8d3e4;
     line-height:1.8;
-
+    margin-top:10px;
 }
 
-
-
-/* الزر */
+a{
+    text-decoration:none;
+}
 
 button{
 
-    margin-top:30px;
+    margin-top:35px;
 
     padding:15px 40px;
 
@@ -153,42 +119,26 @@ button{
 
     color:white;
 
-    font-size:17px;
+    font-size:18px;
 
     cursor:pointer;
 
     transition:.3s;
-
 }
-
-
 
 button:hover{
 
     transform:translateY(-5px);
 
     box-shadow:0 0 30px #2563eb;
-
 }
-
-
-
-a{
-
-    text-decoration:none;
-
-}
-
-
-
-/* مربع الصورة المتحرك */
-
 
 .shape{
 
     width:260px;
-
     height:260px;
+
+    flex-shrink:0;
 
     border-radius:40px;
 
@@ -196,28 +146,19 @@ a{
 
     transform:rotate(15deg);
 
-    box-shadow:0 0 80px #2563eb;
-
-    animation:move 4s infinite;
-
     background:#2563eb;
 
+    box-shadow:0 0 80px rgba(37,99,235,.7);
+
+    animation:move 4s infinite ease-in-out;
 }
-
-
 
 .shape img{
 
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
 }
-
-
-
 
 @keyframes move{
 
@@ -229,14 +170,11 @@ a{
 
 }
 
-
-
 @keyframes show{
 
     from{
 
         opacity:0;
-
         transform:translateY(40px);
 
     }
@@ -244,104 +182,99 @@ a{
     to{
 
         opacity:1;
+        transform:translateY(0);
 
     }
 
 }
 
+/* الموبايل */
 
-
-
-@media(max-width:800px){
-
+@media (max-width:800px){
 
 .container{
 
-    flex-direction:column;
+    flex-direction:column-reverse;
 
     text-align:center;
 
-    gap:40px;
+    padding:30px 20px;
+
+    gap:30px;
 
 }
 
+.text{
+
+    width:100%;
+
+}
 
 h1{
 
-    font-size:40px;
+    font-size:38px;
 
 }
 
+p{
+
+    font-size:16px;
+
+}
+
+button{
+
+    width:100%;
+    max-width:260px;
+
+}
 
 .shape{
 
-    width:220px;
+    width:180px;
+    height:180px;
 
-    height:220px;
-
-}
-
+    transform:none;
 
 }
 
+}
 
 </style>
 
-
 </head>
-
 
 <body>
 
-
 <div class="container">
-
 
 <div class="text">
 
-
 <h1>
-
 New <span>Marina City</span>
-
 </h1>
 
-
 <p>
-
-Displaying descriptive and spatial data for city infrastructure facilities
-
+Displaying descriptive and spatial data for city infrastructure facilities.
 </p>
 
-
-
-<a href="https://www.arcgis.com/apps/instant/basic/index.html?appid=4923971e1f1a4bc690fa082a4b930152">
+<a href="https://www.arcgis.com/apps/instant/basic/index.html?appid=4923971e1f1a4bc690fa082a4b930152" target="_blank">
 
 <button>
-
 View Project
-
 </button>
 
 </a>
 
-
-
 </div>
-
-
 
 <div class="shape">
 
-<img src="المصرية الكويتية.png">
+<img src="المصرية الكويتية.png" alt="Company Logo">
 
 </div>
 
-
-
 </div>
-
-
 
 </body>
 
